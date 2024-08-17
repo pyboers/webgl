@@ -27,7 +27,7 @@ renderer.setPixelRatio(1);
 
 var currentView: View;
 
-currentView = new SphereCubeView(canvas);
+currentView = new ParticleLifeView(canvas);
 currentView.start();
 
 
