@@ -36,7 +36,7 @@ export class SpatialHash implements CollisionDetector{
     }
 
     hashPoint(x: number, y: number){
-        return (x + (y * this.cellCountW)) % (this.cellCount);
+        return Math.abs((x + (y * this.cellCountW)) % (this.cellCount));
     }
 
     getCollisions(): CollisionHit[] {
