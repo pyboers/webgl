@@ -9,7 +9,7 @@ module.exports = {
 	output: {
 		filename: '[name].js',
 		chunkFilename: 'vendor.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'docs')
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js']
@@ -25,7 +25,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './index.html'
+			template: './app/index.html'
 		})
 	],
 	optimization: {
