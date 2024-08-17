@@ -28,21 +28,6 @@ export class ParticleComponent extends Body{
 
     update(dt: number){
         super.update(dt);
-        if(this.position.x < -1){
-            this.position.x = 1;
-        }
-
-        if(this.position.x > 1){
-            this.position.x = -1;
-        }
-        const aspect = window.innerHeight/window.innerWidth;
-        if(this.position.y < -aspect){
-            this.position.y = aspect;
-        }
-
-        if(this.position.y > aspect){
-            this.position.y = -aspect;
-        }
 
         if(this.inactiveTime > 0){
             this.inactiveTime -= dt;
@@ -90,5 +75,20 @@ export class ParticleComponent extends Body{
             // this.applyForces(f.normalize() .multiplyScalar(2));
         this.applyForces(f);
 
+        if(this.position.x < -1){
+            this.velocity.x += -this.velocity.x - (this.position.x - -1) * 10;
+        }
+
+        if(this.position.x > 1){
+            this.velocity.x += -this.velocity.x - (this.position.x - 1) * 10;
+        }
+        const aspect = window.innerHeight/window.innerWidth;
+        if(this.position.y < -aspect){
+            this.velocity.y += -this.velocity.y - (this.position.y - -aspect) * 10;
+        }
+
+        if(this.position.y > aspect){
+            this.velocity.y += -this.velocity.y - (this.position.y - aspect) * 10;
+        }
     }
 }
