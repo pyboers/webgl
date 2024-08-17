@@ -47,7 +47,7 @@ export class ParticleLifeView extends View {
         this.gameObjects.push(wall2);
 
         const wall3 = new GameObject();
-        wall3.position.set(0, 0.59, 0);
+        wall3.position.set(0, window.innerHeight/window.innerWidth + 0.1, 0);
         const wall3Body = new Body(0, 0.5);
         const wall3Shape = new AABB(1, 0.1, wall3Body);
         wall3.attachComponent(wall3Body);
@@ -57,7 +57,7 @@ export class ParticleLifeView extends View {
         this.gameObjects.push(wall3);
 
         const wall4 = new GameObject();
-        wall4.position.set(0, -0.59, 0);
+        wall4.position.set(0, -window.innerHeight/window.innerWidth - 0.1, 0);
         const wall4Body = new Body(0, 0.5);
         const wall4Shape = new AABB(1, 0.1, wall4Body);
         wall4.attachComponent(wall4Body);
